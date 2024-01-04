@@ -7788,12 +7788,12 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">tagging commits</a></p>
+<h4 id="tagging-commits"><a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">tagging commits</a><a class="anchor-link" href="#tagging-commits">¶</a></h4><p>branches are special labels that track a series of commits, but what if you want a special name for a particular commit (like when you released a new version of your code)? you can "tag" these</p>
 <ul>
-<li><code>git tag -a &lt;tagname&gt; &lt;hash&gt;</code></li>
-<li><code>git tag -a &lt;tagname&gt; -m "tag message"</code></li>
-<li><code>git push origin &lt;tagname&gt;</code></li>
-<li><code>git push origin --tags</code></li>
+<li><code>git tag -a &lt;tagname&gt; &lt;hash&gt;</code>  -- useful for tagging a particular commit farther back in history</li>
+<li><code>git tag -a &lt;tagname&gt; -m "tag message"</code> -- this should tag the current commit with a descriptive message</li>
+<li><code>git push origin &lt;tagname&gt;</code> -- push a particular tag up to your remote</li>
+<li><code>git push origin --tags</code> -- push all of your tags up to your remote</li>
 </ul>
 </div>
 </div>
@@ -7805,6 +7805,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="amending-a-commit">amending a commit<a class="anchor-link" href="#amending-a-commit">¶</a></h4><p>Oh no! I made a typo in my commit message!</p>
 <p><code>git commit --amend</code> is useful for both fixing commit messages and for adding in files that were suppoosed to be committed and werent</p>
 </div>
 </div>
@@ -7816,6 +7817,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="cherry-picking">cherry picking<a class="anchor-link" href="#cherry-picking">¶</a></h4><p>What if you have a commit that really belongs on a different branch? Or in development you fixed a bug that you think should be in its own PR? You can "cherry pick" that commit to a new branch.</p>
 <p><code>git cherry-pick &lt;hash&gt;</code></p>
 </div>
 </div>
@@ -7827,7 +7829,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Reverting vs. Restoring</p>
+<h3 id="undoing-changes">undoing changes<a class="anchor-link" href="#undoing-changes">¶</a></h3><p>Reverting vs. Restoring</p>
 </div>
 </div>
 </div>
@@ -7838,7 +7840,8 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><code>git stash</code></p>
+<h4 id="stashing-changes">stashing changes<a class="anchor-link" href="#stashing-changes">¶</a></h4><p>oh no! I started making changes but I'm not on the feature branch I thought I was!</p>
+<p><code>git stash</code> can be used to hide the changes in your working tree and then bring them back out when you're on the appropriate branch</p>
 </div>
 </div>
 </div>
