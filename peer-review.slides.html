@@ -5,7 +5,7 @@
 <meta content="chrome=1" http-equiv="X-UA-Compatible"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-<title>git-collaboration slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>peer-review slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
@@ -7434,480 +7434,250 @@ main {
 <main>
 <div class="reveal">
 <div class="slides"><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=85908cd7-1a7a-4bd2-a942-14d306be7dad">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c1ae3828-e994-4ed7-b280-d5f1cb1c93d9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Collaboration-with-Git-and-Github">Collaboration with Git and Github<a class="anchor-link" href="#Collaboration-with-Git-and-Github">¶</a></h1><p>Madicken Munk</p>
+<h1 id="Peer-Code-Review">Peer Code Review<a class="anchor-link" href="#Peer-Code-Review">¶</a></h1><p>Madicken Munk</p>
 <p>University of Illinois at Urbana-Champaign</p>
 </div>
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=60180e7b-c4a7-41b9-97fa-d2e3e6433854">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=db5c78b7-977f-47a3-a7e6-d03a78faea75">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Lesson-Objectives">Lesson Objectives<a class="anchor-link" href="#Lesson-Objectives">¶</a></h3><ul>
-<li>Review git commands</li>
-<li>Describe individual and collaborative workflows with git</li>
-<li>Introduce git commands for collaborative workflows</li>
-<li>Demo of collaborative workflows in practice</li>
-<li>See additional useful git tips/tricks</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=059ecc7b-4de6-43ac-bda9-7154e0c2be10">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Acknowledgements">Acknowledgements<a class="anchor-link" href="#Acknowledgements">¶</a></h1><p>This material is heavily influenced by the previous works of <a href="https://inundata.org/talks/git-collaboration/#/">Karthik Ram</a> and <a href="https://jameshowison.github.io/peer_production_course/docs/additional_git_exercises.html">James Howison</a> from the previous summer school</p>
-<p>Other Resources I have found helpful/fun for git</p>
-<ul>
-<li><a href="https://git-school.github.io/visualizing-git/">https://git-school.github.io/visualizing-git/</a></li>
-<li><a href="https://pcottle.github.io/learnGitBranching/?NODEMO">https://pcottle.github.io/learnGitBranching/?NODEMO</a></li>
-<li><a href="https://allisonhorst.com/git-github">https://allisonhorst.com/git-github</a></li>
-<li><a href="https://jvns.ca/blog/2023/11/23/branches-intuition-reality/">https://jvns.ca/blog/2023/11/23/branches-intuition-reality/</a></li>
-<li><a href="https://git-scm.com/docs">https://git-scm.com/docs</a></li>
-<li><a href="https://swcarpentry.github.io/git-novice/">https://swcarpentry.github.io/git-novice/</a></li>
+<li>Summarize code review best practices</li>
+<li>Demonstrate code review on a pull request</li>
 </ul>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f0a18147-2b63-4b9d-b785-2b38d507ba0e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a30d0c55-445c-4f74-bbee-2ce3abbf39f4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Workflows-with-git">Workflows with git<a class="anchor-link" href="#Workflows-with-git">¶</a></h1>
+<h1 id="Code-review-best-practices">Code review best practices<a class="anchor-link" href="#Code-review-best-practices">¶</a></h1>
 </div>
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e04e5c97-73b9-448d-8b4c-e59d3d7e04ae">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cb7fb252-12b8-4add-a822-57669402409b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="An-Individual-Workflow-(without-a-remote)">An Individual Workflow (without a remote)<a class="anchor-link" href="#An-Individual-Workflow-(without-a-remote)">¶</a></h1><p>commit, commit, commit .....</p>
-<div class="highlight"><pre><span></span><span class="gp">madicken@computer: ~/repos/research-code $ </span>git<span class="w"> </span>init
-<span class="go">Initialized empty Git repository in /Users/madicken/repos/research-code/.git/</span>
-<span class="gp">madicken@computer: ~/repos/research-code $ </span>git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
-<span class="gp">madicken@computer: ~/repos/research-code $ </span>git<span class="w"> </span>add<span class="w"> </span>README.md
-<span class="gp">madicken@computer: ~/repos/research-code $ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">'add readme with code description'</span>
-<span class="go">[main (root-commit) 49c9e77] add readme with code description</span>
-<span class="go"> 1 file changed, 0 insertions(+), 0 deletions(-)</span>
-<span class="go"> create mode 100644 README.md</span>
-</pre></div>
+<p>Code review, like peer review, enhances the quality of the work being submitted. All involved parties are collaborating to enhance the final product of the pull request.</p>
+<p>When performing code review, you are using your expertise to weigh in on a contribution. You aren't going to have expertise on everything, but your experience in the code and using it is important and relevant to the reivew.</p>
+<p>As a person getting code reviewed, appreciate the reviewer taking time to give you feedback on your work! They are both/either invested and interested in the work you're contributing.</p>
 </div>
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=845d51c6-6447-4e73-8430-e7cfb528c9ba">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1c49b5b5-1b10-4cea-b676-3aa1dedfb747">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="An-Individual-Workflow-(with-a-remote)">An Individual Workflow (with a remote)<a class="anchor-link" href="#An-Individual-Workflow-(with-a-remote)">¶</a></h1><p>commit push, commit commit push, commit push .....</p>
-<div class="highlight"><pre><span></span><span class="gp">madicken@computer: ~/repos/research-code $ </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:munkm/research-code.git
-<span class="gp">madicken@computer: ~/repos/research-code $ </span>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main<span class="w"> </span>
-<span class="go">Enumerating objects: 13, done.</span>
-<span class="go">Counting objects: 100% (13/13), done.</span>
-<span class="go">Delta compression using up to 4 threads</span>
-<span class="go">Compressing objects: 100% (11/11), done.</span>
-<span class="go">Writing objects: 100% (13/13), 8.03 KiB | 4.01 MiB/s, done.</span>
-<span class="go">Total 13 (delta 1), reused 0 (delta 0), pack-reused 0</span>
-<span class="go">remote: Resolving deltas: 100% (1/1), done.</span>
-<span class="go">To github.com:munkm/research-code.git</span>
-<span class="go"> * [new branch]      main -&gt; main</span>
-<span class="go">Branch 'main' set up to track remote branch 'main' from 'origin' by rebasing.</span>
-<span class="gp">madicken@computer: ~/repos/research-code $ </span>git<span class="w"> </span>add<span class="w"> </span>LICENSE
-<span class="gp">madicken@computer: ~/repos/research-code $ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">'add BSD-3 license for my code'</span>
-<span class="go">[main 6c65ead] add license</span>
-<span class="go"> 1 file changed, 401 insertions(+)</span>
-<span class="go"> create mode 100644 LICENSE</span>
-<span class="gp">madicken@computer: ~/repos/research-code $ </span>git<span class="w"> </span>push
-</pre></div>
-<p>With your code on a remote (like github, gitlab, or an internal server for your lab), your work is easily accessed by peers!</p>
+<p>I'm going to be talking about a few different perspectives this morning. Let's define them.</p>
+<p><strong>maintainer</strong> -- a person who keeps things running in a software project. Sometimes maintainers aren't focused on new features but instead focus on overall project infrastructure and usability.</p>
+<p><strong>contributor</strong> -- a person submitting a PR, issue, or feedback to a project. They may have never interacted with the project, or maybe they do so frequently.</p>
+<p><strong>user</strong> -- people who use the code but don't contribute upstream. I try to think about how changes in my code might affect these people since they're often not weighing in in code review.</p>
 </div>
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1884436c-e37c-4a2f-b47b-4b67fbc110e0">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3db2ef3d-5b1d-4094-9274-8118a9e94456">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="...-But-what-about-working-with-others?">... But what about working with others?<a class="anchor-link" href="#...-But-what-about-working-with-others?">¶</a></h1>
+<h3 id="What-is-code-review?">What is code review?<a class="anchor-link" href="#What-is-code-review?">¶</a></h3><p>I like <a href="https://about.gitlab.com/topics/version-control/what-is-code-review/">this description</a> from gitlab.</p>
 </div>
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=10548ed0-46a4-47a9-a3bf-9b10bd07b5e5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3e1b98b5-0710-4628-a9dd-cc72f294bb31">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Centralized-Workflow">Centralized Workflow<a class="anchor-link" href="#Centralized-Workflow">¶</a></h1><p>All members work on the same repository</p>
+<h1 id="Code-review-as-a-reviewer">Code review as a reviewer<a class="anchor-link" href="#Code-review-as-a-reviewer">¶</a></h1>
 </div>
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=035d017c-e2b1-4295-8585-2dca0deb96cc">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=789d1f5a-a806-4f87-af67-2438dc3edae1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Centralized-Workflow">Centralized Workflow<a class="anchor-link" href="#Centralized-Workflow">¶</a></h1><p><strong>git pull</strong> before starting work</p>
-<p>Everyone commits to main</p>
-<p><strong>git push</strong></p>
-<p>If there is no merge conflict, 🙌</p>
-<p>Otherwise fix merge conflict, then push</p>
+<p>My approach in a review:</p>
+<ol>
+<li>Read the PR description. What does the author want this code to do? Is it useful/applicable to the code it's being submitted to (is it in scope)?</li>
+<li>Read the documentation submitted with the code. Do I understand how to use it now? Is there anything that's ambiguous that coould be enhanced by clarification? Are there docs missing that need to be added?</li>
+<li>Look through the code. Do I follow the logic of what's being done? I ask questions if I don't.</li>
+<li>Check the tests. Have tests been added for any new features? Do they cover the scope of the new feature? Do they help me understand the code in any way?</li>
+<li>Consider the user. Is the API of the code changing from what already exists? Will it impact users significantly?</li>
+<li>Look through the code. Suggest constructive improvements. Do I see a lot of functionality that's repeated that can be put into a single function? Do I see a place where a design pattern could be used? I try to add suggestions for improvement as code snippets.</li>
+<li>Try to use the feature. I don't always do this, but for new features I do. Do I run into any errors when I use it? Does it make sense in my workflow?</li>
+</ol>
+<p>I also like to use a good code review checklist so I don't forget things. Here's the one my group uses: <a href="https://arfc.github.io/manual/guides/pull_requests">https://arfc.github.io/manual/guides/pull_requests</a></p>
 </div>
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a107e7db-048b-4e1e-a5dd-11a6d232932d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4b6a1df0-4927-4689-891c-7437ff76ce9b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Feature-Branching-Workflow">Feature Branching Workflow<a class="anchor-link" href="#Feature-Branching-Workflow">¶</a></h1><p>Members work on the same repository but use individual branches to do feature development</p>
+<h3 id="Other-considerations">Other considerations<a class="anchor-link" href="#Other-considerations">¶</a></h3><ul>
+<li>When you accept the code, it's possible the contributor will not return. If you're the maintainer of the project, is this code you are comfortable maintaining moving forward?</li>
+<li>Adding dependencies should be done mindfully.</li>
+<li>If you notice something that you'd like changed that isn't directly related to the PR improvement, open an issue and suggest it as a later fix.</li>
+</ul>
 </div>
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0935adbd-a1a1-4c82-8247-d5e0a9c178cc">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=480d95b2-9052-4a53-8d59-9c31a271ca9c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Feature-Branching-Workflow">Feature Branching Workflow<a class="anchor-link" href="#Feature-Branching-Workflow">¶</a></h1><p>Create and switch to a branch</p>
-<p>Add commits</p>
-<p>Push feature branch to GitHub</p>
-<p>Start a pull request</p>
-<p>Discuss, add more commits, merge</p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ac20d86d-3292-41b9-b4d1-a2caecb4b211">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Some important commands for this workflow:</p>
-<ul>
-<li><code>git branch</code></li>
-<li><code>git checkout -b &lt;branchname&gt;</code></li>
-<li><code>git push -u origin &lt;branchname&gt;</code></li>
+<h3 id="Dos-in-code-review">Dos in code review<a class="anchor-link" href="#Dos-in-code-review">¶</a></h3><ul>
+<li>Thank the contributor for their contribution</li>
+<li>State what things you particularly like about what was submitted.</li>
+<li>Be positive whenever possible.</li>
+<li>Ask questions about things you're confused about. You're probably not the only one.</li>
+<li>If doing multiple rounds of review, try to not let things stagnate.</li>
+<li>Use suggestions to show your thought process in code changes.</li>
 </ul>
 </div>
 </div>
 </div>
 </div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=92548d23-289d-4450-9905-ce9374d97303">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cc401a76-542a-4647-b326-61c6db41654d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>.. add some more commits</p>
-<p>then <code>git push</code> and <em>open a pull request</em></p>
+<h3 id="Don'ts-in-code-review">Don'ts in code review<a class="anchor-link" href="#Don'ts-in-code-review">¶</a></h3><ul>
+<li>Nitpicking can really set the tone of a review. Is this small thing really important to the code or is it personal preference?</li>
+<li>Don't reject code for stylistic or small changes. This is very demotivating for a contributor.</li>
+</ul>
 </div>
 </div>
 </div>
 </div></div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c62f273b-224d-4ea2-9b7a-ebb4723eea0f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aaeebda1-0363-4699-916e-ce72a7694f82">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Pull-Requests">Pull Requests<a class="anchor-link" href="#Pull-Requests">¶</a></h1><p>Pull requests are an excellent tool for <strong>fostering code review</strong>. If you’re using Github for team projects, <em>you should be using these extensively</em>.</p>
+<h3 id="Tips-for-smoother-code-reviews-(and-development!)-in-your-project">Tips for smoother code reviews (and development!) in your project<a class="anchor-link" href="#Tips-for-smoother-code-reviews-(and-development!)-in-your-project">¶</a></h3><ul>
+<li>Your reivews are there to enhance the code that was submitted for other maintainers, developers, and users. You are collaaborating with the author.</li>
+<li>Using a linter and formatter mean that reviews avoid style bikeshedding.</li>
+<li>Having good test coverage and CI mean that the a new contributor gets automatic feedback on how their code fits into your project. This also allows for code reviewers to focus on code readability and applicability rather than helping the author debug.</li>
+<li>Having good developer documentation (what linter and formatter do your code use? What is your docs style) helps make the contributor experience a bit less iterative.</li>
+<li>Having your issue tracker with clearly described issues helps people other than you understand what's going on in the project.</li>
+<li>Labeling issues with things like <code>good first issue</code> and what type of fix the issue is (e.g. <code>documentation</code>, <code>testing</code>, or something feature-specific means that potential contributors can more easily choose a contribution they are comfortable with. This also ensures that the contribution somebody addresses from the issue tracker is relevant to the project.</li>
+<li>Consider having a project decription in your README. What is the purpose of your code? What is it? What is it <em>*not*</em>?</li>
+</ul>
 </div>
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=74cce5d3-b192-4890-b2dd-80d1b32670a5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8492d7c8-13a3-4fcf-ae99-1cf9e0ec3965">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Pull-request-best-practices:">Pull request best practices:<a class="anchor-link" href="#Pull-request-best-practices:">¶</a></h2><p>A good practice is for someone else to merge your code into master, ensuring two people understand each feature. Sometimes a reviewer may not have merge rights; in these cases the requirement may be an approving review must be given before the feature is merged.</p>
+<h3 id="A-few-more-things">A few more things<a class="anchor-link" href="#A-few-more-things">¶</a></h3><ul>
+<li>If you know the contributor and you have done a few rounds of review, consider scheduling a call or sitting down with them to try to resolve things.</li>
+</ul>
 </div>
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eed1e0aa-7b90-473f-a720-a7fdbe2dcd02">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bb3a0352-b599-4db0-9da4-90aa56c4af4c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Pull-request-tip:">Pull request tip:<a class="anchor-link" href="#Pull-request-tip:">¶</a></h2><p>Using the github interface, you can change the target of a pull request. The default is to the <code>main</code> branch, but it could be another feature branch. This can be used if you want to help develop a feature branch outside of <code>main</code> with a collaborator.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9f822821-217d-4b19-8e8d-a81f55e738dc">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>⛔️ Never send a pull request from master 🙅</p>
-</div>
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5858758c-02fd-49fa-8176-3125ce9026f9">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>⛔️ Never send a large pull request without notice 🙅</p>
-</div>
-</div>
-</div>
-</div></div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ad06686b-47cb-4182-83e7-7f551103117a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Forking-Workflow">Forking Workflow<a class="anchor-link" href="#Forking-Workflow">¶</a></h1><p>In this workflow each collaborator "forks" a copy of the centralized repository. These forks represent individual remote repositories for each collaborator. Collaborators submit pull requests from their forks to the centralized repository.</p>
+<h3 id="Code-review-as-a-contributor/developer">Code review as a contributor/developer<a class="anchor-link" href="#Code-review-as-a-contributor/developer">¶</a></h3><p>Getting your own code reviewed can be exciting! But it can also be a little nervewracking.</p>
+<p>Let's talk a bit about the process of responding to a code review.</p>
 </div>
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=313fc70a-6294-45f1-97eb-1ef47ef36a8d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=711a5b61-2b4a-48c3-ad85-1190bf7484d6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Forking-Workflow">Forking Workflow<a class="anchor-link" href="#Forking-Workflow">¶</a></h1><p>Everyone has a fork of a "central" repository</p>
-<p>Add commits to feature branches</p>
-<p>Push feature branches to individual forks</p>
-<p>Send pull-request from feature branch on fork to central repository</p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4a2d4ead-a911-4f1d-b715-8eadccf6257a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Extra-Tips:">Extra Tips:<a class="anchor-link" href="#Extra-Tips:">¶</a></h1>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=45213432-ec9d-4f6f-b367-7a0917f4cbef">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Tip #1:  Always git pull before you start new work</p>
-</div>
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4a3a7304-0b6d-421e-b5c1-fedc16956bfe">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Tip #2:  Keep branch names descriptive</p>
-</div>
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1f32794e-6b53-4a18-98c7-33af3a6c930c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Tip #3:  Generously use branches (but delete them when they're merged or stale)</p>
-</div>
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7bc250c7-f600-4b3b-8622-f04236c9eb53">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Tip #4:  Use <a href="https://github.com/cli/cli#installation">github command line tool</a> (gh) to simplify your workflow</p>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fc4bae44-228a-4b8b-bbcc-243cc1025ea4">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="More-useful-git-commands">More useful git commands<a class="anchor-link" href="#More-useful-git-commands">¶</a></h1>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dcb8a243-07a6-4298-9463-f86881e789e6">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="tagging-commits"><a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">tagging commits</a><a class="anchor-link" href="#tagging-commits">¶</a></h4><p>branches are special labels that track a series of commits, but what if you want a special name for a particular commit (like when you released a new version of your code)? you can "tag" these</p>
+<p>My approach:</p>
 <ul>
-<li><code>git tag -a &lt;tagname&gt; &lt;hash&gt;</code>  -- useful for tagging a particular commit farther back in history</li>
-<li><code>git tag -a &lt;tagname&gt; -m "tag message"</code> -- this should tag the current commit with a descriptive message</li>
-<li><code>git push origin &lt;tagname&gt;</code> -- push a particular tag up to your remote</li>
-<li><code>git push origin --tags</code> -- push all of your tags up to your remote</li>
+<li>Read through the reviewer's comments. Consider their perspective as I read the comments. If I don't understand a comment, I ask a question as a reply to the review comment.</li>
+<li>Answer reviewer questions, if there are any.</li>
+<li>Incorporate any code suggestions the reveiwer made that I like through the github interface. This helps preserve authorship of their contributions.</li>
+<li>Make code changes locally and push them to my feature branch. Address review comments in seperate commits to help split things up.</li>
+<li>Notify the reviewer once I've addressed all comments and all open discussions have been resolved.</li>
 </ul>
 </div>
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0e28555f-19e7-41c9-90cb-4390198f2984">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d18d769b-f67b-4ce6-a008-f3c55f6922ba">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="amending-a-commit">amending a commit<a class="anchor-link" href="#amending-a-commit">¶</a></h4><p>Oh no! I made a typo in my commit message!</p>
-<p><code>git commit --amend</code> is useful for both fixing commit messages and for adding in files that were suppoosed to be committed and werent</p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c82693ea-c776-420d-ae51-67bb7d7632ff">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="cherry-picking">cherry picking<a class="anchor-link" href="#cherry-picking">¶</a></h4><p>What if you have a commit that really belongs on a different branch? Or in development you fixed a bug that you think should be in its own PR? You can "cherry pick" that commit to a new branch.</p>
-<p><code>git cherry-pick &lt;hash&gt;</code></p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=83fc2019-7244-46d7-b2e6-0a02c9047d9b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="undoing-changes">undoing changes<a class="anchor-link" href="#undoing-changes">¶</a></h3><p>Reverting vs. Restoring</p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=96c0f31f-b465-4b2f-bd8b-ea5366f3da21">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="stashing-changes">stashing changes<a class="anchor-link" href="#stashing-changes">¶</a></h4><p>oh no! I started making changes but I'm not on the feature branch I thought I was!</p>
-<p><code>git stash</code> can be used to hide the changes in your working tree and then bring them back out when you're on the appropriate branch</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fe3b7f22-a885-4618-96ca-cd29d015bcb8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="More-resources">More resources<a class="anchor-link" href="#More-resources">¶</a></h1><ul>
-<li>Do you need to version control large files? <a href="https://git-lfs.com/">git lfs</a> and <a href="https://git-annex.branchable.com/">git annex</a> are tools designed to help with this</li>
-<li>How to undo almost anything with git <a href="https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/">link</a></li>
-<li>Remove sensitive data (like private keys) from a repository <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository">link</a></li>
+<h1 id="More-Resources:">More Resources:<a class="anchor-link" href="#More-Resources:">¶</a></h1><ul>
+<li><a href="https://google.github.io/eng-practices/review/reviewer/">https://google.github.io/eng-practices/review/reviewer/</a></li>
+<li><a href="https://stackoverflow.blog/2019/09/30/how-to-make-good-code-reviews-better/">https://stackoverflow.blog/2019/09/30/how-to-make-good-code-reviews-better/</a></li>
+<li><a href="https://mtlynch.io/human-code-reviews-1/">https://mtlynch.io/human-code-reviews-1/</a></li>
+<li><a href="https://mtlynch.io/code-review-love/">https://mtlynch.io/code-review-love/</a></li>
+<li><a href="https://developers.redhat.com/blog/2019/07/08/10-tips-for-reviewing-code-you-dont-like#code_review_strategies">https://developers.redhat.com/blog/2019/07/08/10-tips-for-reviewing-code-you-dont-like#code_review_strategies</a></li>
+<li><a href="https://kickstarter.engineering/a-guide-to-mindful-communication-in-code-reviews-48aab5282e5e">https://kickstarter.engineering/a-guide-to-mindful-communication-in-code-reviews-48aab5282e5e</a></li>
 </ul>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cc333f2b-eca8-4fe5-8161-81005f546f8b">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=16536212-3c4b-492e-af77-e69c2f6ed72c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">¶</a></h1>
 </div>
 </div>
 </div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=49a0aa92-5289-4197-a400-7c1aec0fbabf">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Move into groups of three. Choose one person to be a "maintainer" and two to be "contributors". Work through the exercises <a href="https://jameshowison.github.io/peer_production_course/docs/additional_git_exercises.html#Basic_forking_workflow_setup">here</a> up through "splitting a pull request".</p>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=638f7c5c-b10c-409d-be68-99c559c59823">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Yesterday you learned about design patterns in Python. Work on your project in a new branch and update some of your code using one. Then submit a PR with this addition (but don't merge it).</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e7fd3245-2098-4d18-b40b-6a5a47364c77">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section>
+</div></section></section>
 </div>
 </div>
 </main>
