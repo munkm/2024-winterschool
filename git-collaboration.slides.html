@@ -6,7 +6,7 @@
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
 <title>git-collaboration slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
-  import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.0/mermaid.esm.min.mjs';
+  import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
 <!-- General and theme style sheets -->
@@ -7845,6 +7845,18 @@ main {
 </div>
 </div>
 </div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=02968326-7e0a-44f1-a847-a2cbb479af2d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="co-authoring-changes">co-authoring changes<a class="anchor-link" href="#co-authoring-changes">¶</a></h4><p>Have you pair programmed with a friend and come up with a solution together? How do you deal with attribution?</p>
+<p><code>Co-authored-by: NAME &lt;EMAIL&gt;</code> can add multiple authors to a commit.</p>
+</div>
+</div>
+</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fe3b7f22-a885-4618-96ca-cd29d015bcb8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7878,7 +7890,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Move into groups of three. Choose one person to be a "maintainer" and two to be "contributors". Work through the exercises <a href="https://jameshowison.github.io/peer_production_course/docs/additional_git_exercises.html#Basic_forking_workflow_setup">here</a> up through "splitting a pull request".</p>
+<p>Choose one of the following:</p>
 </div>
 </div>
 </div>
@@ -7889,7 +7901,10 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Yesterday you learned about design patterns in Python. Work on your project in a new branch and update some of your code using one. Then submit a PR with this addition (but don't merge it).</p>
+<ul>
+<li>If you brought a project to work on: open an issue on your repository for something you'd like to improve that's a beginner friendly issue. Describe the issue thoroughly. Then, working in groups at your tables, have a partner fork your project and submit a pull request fixing that issue. Do not merge the pull request today.</li>
+<li>Consider the design patterns lecture or the packaging and distributing lecture from yesterday. Make a feature branch on your project and add one of these features to your project. Submit a pull request on your project using that branc. Do not merge the pull request today.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7932,7 +7947,10 @@ require(
             history: true,
             transition: "slide",
             slideNumber: "",
-            plugins: [RevealNotes]
+            plugins: [RevealNotes],
+            width: 960,
+			      height: 700,
+
         });
 
         var update = function(event){
